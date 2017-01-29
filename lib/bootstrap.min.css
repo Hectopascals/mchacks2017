@@ -3704,6 +3704,7 @@ fieldset[disabled] .btn-link:focus {
 }
 
 .btn-block {
+     margin-top: 50px
 }
 
 .btn-block+.btn-block {
