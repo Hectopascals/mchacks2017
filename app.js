@@ -106,7 +106,8 @@
         onresult: function(msg) {
             // inside here we got the thing
             if(typeof msg["transcriptions"] !== "undefined") {
-              console.log(msg["transcriptions"]);
+              var extracted = [].concat.apply([],msg["transcriptions"]);
+                console.log(extracted[0]);
             }
             console.log(JSON.stringify(msg, null, 2));
 
