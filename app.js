@@ -83,7 +83,7 @@
 
     var defaultOptions = {
         onopen: function() {
-            console.log("Websocket Opened");
+            console.log("Websocket Open");
             $content.addClass('connected');
         },
         onclose: function() {
@@ -96,6 +96,7 @@
         onresult: function(msg) {
             LOG(msg, 'in');
             console.log(msg);
+            console.log("Hello");
             if (msg.result_type === "NMDP_TTS_CMD" || msg.result_type === "NVC_TTS_CMD") {
                 dLog(JSON.stringify(msg, null, 2), $ttsDebug);
                 $ttsGo.prop('disabled', false);
@@ -104,7 +105,7 @@
             } else if (msg.result_type == "NDSP_ASR_APP_CMD") {
                 if(msg.result_format === "nlu_interpretation_results") {
                     try{
-                        dLog("interpretations = " + JSON.stringify(msg.nlu_interpretation_results.payload.interpretations, null, 2), $asrDebug);
+                        dLog("interpretations = " + JSON.stringify(msg.c.payload.interpretations, null, 2), $asrDebug);
                     }catch(ex){
                         dLog(JSON.stringify(msg, null, 2), $asrDebug, true);
                     }

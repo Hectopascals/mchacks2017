@@ -1,0 +1,23 @@
+{
+  "name": "spicy",
+  "version": "1.0.0",
+  "description": "This sample is intended to demonstrate how to use the Nuance Websocket protocol in JavaScript.",
+  "main": "app.js",
+  "dependencies": {
+    "nuance": "^1.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+      "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vincentt117/mchacks2017.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vincentt117/mchacks2017/issues"
+  },
+  "homepage": "https://github.com/vincentt117/mchacks2017#readme"
+}
