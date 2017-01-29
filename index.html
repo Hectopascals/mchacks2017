@@ -21,6 +21,10 @@
     <script src='lib/resampler.js'></script>
     <script src='lib/speex.js'></script>
     <script src='lib/nuance.js'></script>
+    
+    
+    <!--RecordingButton-->
+    
 </head>
 <body>
 
@@ -44,7 +48,7 @@
     <div id="content" class='container'>
         <!--  HEADER -->
         <h1 class='page-header'>
-            <img style="margin-left: 25px;" src="images/NMIX.png" width="220px"> Runtime Execution Console
+            <img class="img-responsive" style="margin-left: 0px;" src="images/Banner-L.jpg">
         </h1>
 
         <div class='' style='min-height:400px;padding:0px;'>
@@ -147,6 +151,11 @@
                     </div>
                 </div>
 
+                
+                
+                
+                
+                
                 <!--  ASR / NLU -->
                 <div role="tabpanel" id="speech-nlu" class='col-md-12 tab-pane fade'>
                     <div id="asr" class='panel panel-default'>
@@ -161,9 +170,20 @@
                             </div>
                             <canvas id="asr_viz" height="220" ></canvas>
                             <br/>
+                            
+                            
+                            
+                            
+                            
+                            
                             <button id='asr_go' type='button' class='btn btn-primary btn-block'>
-                                <i class='fa fa-microphone'></i> <span id='asr_label'>RECORD</span>
+                                <img src="images/RecordingButton.gif" LOOP="false" />
+                                <span id='asr_label'></span>
                             </button>
+                    
+                            
+                            
+                            
                         </div>
                         <div id='asr_debug_output' class='panel-body' ></div>
                     </div>

@@ -159,7 +159,7 @@ function getMCSymbolPrototype(symbol, nominalBounds, frameBounds) {
 
 // stage content:
 (lib.Countdown = function(mode,startPosition,loop) {
-	this.initialize(mode,startPosition,loop,{});
+if (loop == null) { loop = false; }	this.initialize(mode,startPosition,loop,{});
 
 	// CountDown
 	this.shape = new cjs.Shape();

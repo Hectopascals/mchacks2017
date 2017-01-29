@@ -24,13 +24,9 @@ body {
 }
 .page-header {
     color: #f8f8f8;
-    background: #21929e;
-    background: -moz-linear-gradient(left, #21929e 0%, #2cc5d5 100%);
-    background: -webkit-linear-gradient(left, #21929e 0%,#2cc5d5 100%);
-    background: linear-gradient(to right, #21929e 0%,#2cc5d5 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#21929e', endColorstr='#2cc5d5',GradientType=1 );
+    background: #f8f8f8;
     margin-top: 0px;
-    margin-bottom: 1px;
+    margin-bottom: 0px;
 }
 .tab-pane {
     padding: 10px 40px;
@@ -141,3 +137,7 @@ li.active .status-indicator {
 }
 
 
+
+h1 {
+    
+}
