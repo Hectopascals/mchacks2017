@@ -1,5 +1,15 @@
 (function(){
 
+    // button ui
+    $("#asr_go").on('click', function() {
+      $(this).css("outline", "none");
+      if($(this).find("img").attr("src") == "images/Countdown.gif") {
+        $(this).find("img").attr("src", "images/RecordingButton.gif");
+      } else {
+        $(this).find("img").attr("src", "images/Countdown.gif");
+      }
+    });
+
     // UserMedia
 
     var userMedia = undefined;
@@ -94,7 +104,10 @@
             viz(vol);
         },
         onresult: function(msg) {
-            console.log(msg["transcriptions"]); // should error check for message: query error
+            // inside here we got the thing
+            if(typeof msg["transcriptions"] !== "undefined") {
+              console.log(msg["transcriptions"]);
+            }
             console.log(JSON.stringify(msg, null, 2));
 
             LOG(msg, 'in');
