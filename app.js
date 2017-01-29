@@ -94,8 +94,9 @@
             viz(vol);
         },
         onresult: function(msg) {
+            console.log(msg["transcriptions"]); // should error check for message: query error
             console.log(JSON.stringify(msg, null, 2));
-            
+
             LOG(msg, 'in');
             if (msg.result_type === "NMDP_TTS_CMD" || msg.result_type === "NVC_TTS_CMD") {
                 dLog(JSON.stringify(msg, null, 2), $ttsDebug);
