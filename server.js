@@ -16,6 +16,41 @@
 //    }
 //});
 
+watson = require('watson-developer-cloud');
+var io = require('socket.io').listen(80); // initiate socket.io server
+
+var tone_analyzer = watson.tone_analyzer({
+  username: '3ae452d2-f34d-49c8-ae46-e5e135d1a847',
+  password: 'zrRaYsuFo6nR',
+  version: 'v3',
+  version_date: '2016-05-19'
+});
+
+function fn1(text) {
+	tone_analyzer.tone({ text: text },
+	  function(err, tone) {
+	    if (err)
+	      console.log(err);
+	    else
+	      console.log(JSON.stringify(tone.document_tone.tone_categories[0].tones, null, 2));
+	});
+}
+
+
+io.sockets.on('connection', function (socket) {
+  // wait for the event raised by the client
+  socket.on('my other event', function (data) { 
+  	console.log("a print");
+    console.log(data);
+    tone_analyzer.tone({ text: data["text"] },
+	  function(err, tone) {
+	    if (err)
+	      console.log(err);
+	    else
+	      console.log(JSON.stringify(tone.document_tone.tone_categories[0].tones, null, 2));
+	});
+  });
+});
 
 var connect = require('connect');
 var serveStatic = require('serve-static');

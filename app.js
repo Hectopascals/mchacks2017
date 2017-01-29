@@ -107,9 +107,11 @@
             // inside here we got the thing
             if(typeof msg["transcriptions"] !== "undefined") {
               var extracted = [].concat.apply([],msg["transcriptions"]);
-                console.log(extracted[0]);
+              var socket = io.connect('http://localhost:80'); // connec to server
+                socket.emit('my other event', { text: extracted[0] }); // raise an event on the server
+                // fn1(extracted[0]);
             }
-            console.log(JSON.stringify(msg, null, 2));
+            //console.log(JSON.stringify(msg, null, 2));
 
             LOG(msg, 'in');
             if (msg.result_type === "NMDP_TTS_CMD" || msg.result_type === "NVC_TTS_CMD") {
