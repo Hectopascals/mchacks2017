@@ -89,6 +89,17 @@
         cv.toggle();
     });
 
+    window.socket = io.connect('http://localhost:80'); // connec to server
+
+    window.socket.on('maxEmotion calculated', function (data) {
+        console.log("max emotion calculated");
+        emotion = data["text"];
+        var _giphy_tv_tag=emotion;
+        var g = document.createElement('script'); g.type = 'text/javascript'; g.async = true;
+        g.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'giphy.com/static/js/widgets/tv.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(g, s);
+    });
+
     // Default options for all transactions
 
     var defaultOptions = {
@@ -107,8 +118,7 @@
             // inside here we got the thing
             if(typeof msg["transcriptions"] !== "undefined") {
               var extracted = [].concat.apply([],msg["transcriptions"]);
-              var socket = io.connect('http://localhost:80'); // connec to server
-                socket.emit('my other event', { text: extracted[0] }); // raise an event on the server
+                window.socket.emit('my other event', { text: extracted[0] }); // raise an event on the server
                 // fn1(extracted[0]);
             }
             //console.log(JSON.stringify(msg, null, 2));

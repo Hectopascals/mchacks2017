@@ -26,28 +26,36 @@ var tone_analyzer = watson.tone_analyzer({
   version_date: '2016-05-19'
 });
 
-function fn1(text) {
-	tone_analyzer.tone({ text: text },
-	  function(err, tone) {
-	    if (err)
-	      console.log(err);
-	    else
-	      console.log(JSON.stringify(tone.document_tone.tone_categories[0].tones, null, 2));
-	});
-}
+global.socket = null;
 
 
 io.sockets.on('connection', function (socket) {
+  global.socket = socket;
   // wait for the event raised by the client
-  socket.on('my other event', function (data) { 
+  global.socket.on('my other event', function (data) { 
   	console.log("a print");
     console.log(data);
     tone_analyzer.tone({ text: data["text"] },
 	  function(err, tone) {
 	    if (err)
 	      console.log(err);
-	    else
+	    else {
 	      console.log(JSON.stringify(tone.document_tone.tone_categories[0].tones, null, 2));
+	      var maxScore = 0; var maxEmotion;
+	      var responseArr = tone.document_tone.tone_categories[0].tones;
+	      for(response in responseArr) {
+	      	console.log(responseArr[response]);
+	      	if(responseArr[response]["score"] >= maxScore) {
+	      		maxScore = responseArr[response]["score"];
+	      		maxEmotion = responseArr[response]["tone_id"];
+	      	}
+	      }
+	      console.log(maxEmotion);
+
+	      // pass this 
+	      console.log(global.socket);
+	      global.socket.emit('maxEmotion calculated', { text: maxEmotion });
+	  	}
 	});
   });
 });
