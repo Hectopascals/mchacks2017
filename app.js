@@ -94,9 +94,9 @@
             viz(vol);
         },
         onresult: function(msg) {
+            console.log(JSON.stringify(msg, null, 2));
+            
             LOG(msg, 'in');
-            console.log(msg);
-            console.log("Hello");
             if (msg.result_type === "NMDP_TTS_CMD" || msg.result_type === "NVC_TTS_CMD") {
                 dLog(JSON.stringify(msg, null, 2), $ttsDebug);
                 $ttsGo.prop('disabled', false);
