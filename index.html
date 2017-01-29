@@ -165,14 +165,25 @@
                         
                         <div class='panel-body'>
                             
-                            <canvas align="center" id="asr_viz" height="220" ></canvas>
+                            <div>
+                                <canvas align="center" id="asr_viz" height="220" ></canvas>
+                            </div>
                             
-                            <div align="center">
-                                <button  id='asr_go' type='button' class='btn btn-link btn-block' >
+                            <div class="col-sm-4" align="center">
+                                <img src="images/pepperBae.gif" width="300" loop=infinite/>
+                            </div>
+                            
+                            <div class="col-sm-4" align="center">
+                                <button  id='asr_go' type='button' mousedown="asr()" class='btn btn-link btn-block' >
                                     <img src="images/RecordingButton.gif" width="100" />
                                 </button>
                                 <h3 id='asr_label'>Record</h3>
                             </div>
+                            
+                            <div class="col-sm-4"align="center">
+                                <img src="images/pepperBae.gif" class="image2"width="300" />
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
