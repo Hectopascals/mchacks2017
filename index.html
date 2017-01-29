@@ -52,15 +52,15 @@
         </h1>
 
         <div class='' style='min-height:400px;padding:0px;'>
-
+            <!--
             <ul class="nav nav-tabs nav-justified" role="tablist">
                 <li role="presentation"><a role="tab" data-toggle="tab" href="#speech-nlu">② Speech Recognition (w/ NLU)</a> <div class='status-indicator'>&nbsp;</div></li>
             </ul>
-
+            -->
             <div class="tab-content">
 
                 <!--  CREDENTIALS -->
-                <div id="credentials" role="tabpanel" class='col-md-12 tab-pane fade in active'>
+                <div id="credentials" role="tabpanel" class='col-md-12 tab-pane fade in'>
                     <div class='panel panel-default'>
                         <div class='panel-heading'>
                             <strong>Connection Parameters</strong>
@@ -157,7 +157,7 @@
                 
                 
                 <!--  ASR / NLU -->
-                <div role="tabpanel" id="speech-nlu" class='col-md-12 tab-pane fade'>
+                <div role="tabpanel" id="speech-nlu" class='col-md-12 tab-pane fade in active'>
                     <div id="asr" class='panel panel-default'>
                         <div class='panel-heading'>
                             <strong>Speech Recognition with Natural Language Understanding (optional, using the Context Tag defined)</strong>
@@ -176,8 +176,8 @@
                             
                             
                             
-                            <button id='asr_go' type='button' class='btn btn-primary btn-block'>
-                                <img src="images/RecordingButton.gif" LOOP="false" />
+                            <button id='asr_go' type='button' class='btn btn-link btn-block'>
+                                <img src="images/RecordingButton.gif" width="min" />
                                 <span id='asr_label'></span>
                             </button>
                     
