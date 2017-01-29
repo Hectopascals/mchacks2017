@@ -23,6 +23,9 @@
     <script src='lib/nuance.js'></script>
     
     
+    
+    <script src='lib/btnfn.js'></script>
+    
     <!--RecordingButton-->
     
 </head>
@@ -159,33 +162,18 @@
                 <!--  ASR / NLU -->
                 <div role="tabpanel" id="speech-nlu" class='col-md-12 tab-pane fade in active'>
                     <div id="asr" class='panel panel-default'>
-                        <div class='panel-heading'>
-                            <strong>Speech Recognition with Natural Language Understanding (optional, using the Context Tag defined)</strong>
-                        </div>
+                        
                         <div class='panel-body'>
-                            <div class="checkbox">
-                                <label>
-                                    <input id="use_nlu" type="checkbox" checked/> Enable Natural Language Understanding (+ Speech Recognition Customization)
-                                </label>
+                            
+                            <canvas align="center" id="asr_viz" height="220" ></canvas>
+                            
+                            <div align="center">
+                                <button  id='asr_go' type='button' class='btn btn-link btn-block' >
+                                    <img src="images/RecordingButton.gif" width="100" />
+                                </button>
+                                <h3 id='asr_label'>Record</h3>
                             </div>
-                            <canvas id="asr_viz" height="220" ></canvas>
-                            <br/>
-                            
-                            
-                            
-                            
-                            
-                            
-                            <button id='asr_go' type='button' class='btn btn-link btn-block'>
-                                <img src="images/RecordingButton.gif" width="min" />
-                                <span id='asr_label'></span>
-                            </button>
-                    
-                            
-                            
-                            
                         </div>
-                        <div id='asr_debug_output' class='panel-body' ></div>
                     </div>
                 </div>
 
