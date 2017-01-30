@@ -89,7 +89,7 @@
         cv.toggle();
     });
 
-    window.socket = io.connect('http://localhost:80'); // connec to server
+    window.socket = io.connect('http://localhost:8000'); // connec to server
 
     window.socket.on('maxEmotion calculated', function (data) {
         console.log("max emotion calculated");

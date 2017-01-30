@@ -17,7 +17,7 @@
 //});
 
 watson = require('watson-developer-cloud');
-var io = require('socket.io').listen(80); // initiate socket.io server
+var io = require('socket.io').listen(8000); // initiate socket.io server
 
 var tone_analyzer = watson.tone_analyzer({
   username: '3ae452d2-f34d-49c8-ae46-e5e135d1a847',

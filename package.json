@@ -19,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/vincentt117/mchacks2017/issues"
   },
+    "dependencies":{
+        "connect": "*",
+        "watson-developer-cloud": "*",
+        "serve-static": "*",
+        "socket.io": "*"
+    },
   "homepage": "https://github.com/vincentt117/mchacks2017#readme"
 }
